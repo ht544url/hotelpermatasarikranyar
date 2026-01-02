@@ -7,177 +7,191 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Orbitron:wght@400;500;700;900&family=Montserrat:wght@100;300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 
-    <style>
-        /* --- [1] ADVANCED CSS ARCHITECTURE --- */
-        :root {
-            --gold-primary: #D4AF37;
-            --gold-bright: #FFD700;
-            --gold-dark: #8B6508;
-            --neon: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 40px rgba(212, 175, 55, 0.3);
-            --bg-black: #020202;
-            --surface-1: rgba(255, 255, 255, 0.05);
-            --surface-2: rgba(255, 255, 255, 0.1);
-            --surface-3: rgba(255, 255, 255, 0.15);
-            --red-danger: #c0392b;
-            --transition-ultra: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
-            --transition-long: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-            --transition-mid: all 0.4s ease;
-        }
+<style>
+    /* ================================================================
+       SYSTEM STYLE: PERMATA SARI v9.0 (RECOVERY COMPLETE)
+       OPTIMIZATION: TV 32" SAFE-AREA & PREMIUM SYMBOLS
+       ================================================================
+    */
 
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            outline: none; -webkit-tap-highlight-color: transparent;
-        }
+    :root {
+        --gold-primary: #D4AF37;
+        --gold-bright: #FFD700;
+        --gold-dark: #8B6508;
+        --neon: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 40px rgba(212, 175, 55, 0.3);
+        --bg-black: #020202;
+        --surface-1: rgba(255, 255, 255, 0.05);
+        --surface-2: rgba(255, 255, 255, 0.1);
+        --surface-3: rgba(255, 255, 255, 0.15);
+        --red-danger: #c0392b;
+        --transition-ultra: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+        --transition-long: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        --transition-mid: all 0.4s ease;
+    }
 
-        body {
-            background-color: var(--bg-black);
-            color: #FFFFFF;
-            font-family: 'Montserrat', sans-serif;
-            height: 100vh; width: 100vw;
-            overflow: hidden; cursor: none;
-            perspective: 2000px;
-        }
+    * {
+        margin: 0; padding: 0; box-sizing: border-box;
+        outline: none; -webkit-tap-highlight-color: transparent;
+    }
 
-        /* --- [2] BACKGROUND PARTICLE ENGINE --- */
-        #particle-canvas {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-        }
+    body {
+        background-color: var(--bg-black);
+        color: #FFFFFF;
+        font-family: 'Montserrat', sans-serif;
+        height: 100vh; width: 100vw;
+        overflow: hidden; 
+        cursor: none;
+        perspective: 2000px;
+        /* PENCEGAHAN LAYAR KEPOTONG PADA TV 32 INCI */
+        zoom: 0.9; 
+    }
 
-        /* --- [3] HEADER ENGINE --- */
-        header {
-            height: 18vh; padding: 0 80px; display: flex; justify-content: space-between;
-            align-items: center; background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, transparent 100%);
-            border-bottom: 1px solid rgba(212,175,55,0.25); position: relative; z-index: 1000;
-        }
+    /* --- BACKGROUND PARTICLE --- */
+    #particle-canvas {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+    }
 
-        .brand-logo { display: flex; flex-direction: column; }
-        .brand-logo h1 {
-            font-family: 'Cinzel', serif; font-size: 3.8rem; color: var(--gold-primary);
-            text-shadow: var(--neon); letter-spacing: 15px; text-transform: uppercase;
-        }
-        .brand-logo span { font-size: 0.9rem; letter-spacing: 8px; color: #888; margin-top: -10px; font-weight: 300; }
+    /* --- HEADER SYSTEM --- */
+    header {
+        height: 18vh; padding: 0 60px; display: flex; justify-content: space-between;
+        align-items: center; background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, transparent 100%);
+        border-bottom: 1px solid rgba(212,175,55,0.25); position: relative; z-index: 1000;
+    }
 
-        .header-widgets { display: flex; align-items: center; gap: 40px; }
-        .widget-item { text-align: right; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 30px; }
-        .time-display { font-family: 'Orbitron'; font-size: 3.2rem; font-weight: 900; color: #fff; text-shadow: 0 0 15px rgba(255,255,255,0.2); }
-        .date-display { font-size: 1rem; color: var(--gold-primary); text-transform: uppercase; font-weight: 700; letter-spacing: 2px; }
+    .brand-logo h1 {
+        font-family: 'Cinzel', serif; font-size: 3.5rem; color: var(--gold-primary);
+        text-shadow: var(--neon); letter-spacing: 12px; text-transform: uppercase;
+    }
+    .brand-logo span { font-size: 0.8rem; letter-spacing: 6px; color: #888; margin-top: -10px; display: block; font-weight: 300; }
 
-        /* --- [4] MAIN GRID ARCHITECTURE --- */
-        main {
-            display: grid; grid-template-columns: 450px 1fr; height: 82vh;
-            padding: 40px 80px; gap: 60px;
-        }
+    .header-widgets { display: flex; align-items: center; gap: 35px; }
+    .widget-item { text-align: right; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 25px; }
+    .time-display { font-family: 'Orbitron'; font-size: 3rem; font-weight: 900; color: #fff; }
+    .date-display { font-size: 0.9rem; color: var(--gold-primary); text-transform: uppercase; font-weight: 700; }
 
-        /* --- [5] NAVIGATION SYSTEM (3D PERSPECTIVE) --- */
-        .sidebar-nav { display: flex; flex-direction: column; gap: 18px; position: relative; z-index: 500; }
+    /* --- MAIN ARCHITECTURE --- */
+    main {
+        display: grid; grid-template-columns: 420px 1fr; height: 82vh;
+        padding: 30px 60px; gap: 50px;
+    }
 
-        .nav-link {
-            background: var(--surface-1); border: 1px solid rgba(255,255,255,0.08);
-            padding: 38px 30px; border-radius: 20px; display: flex; align-items: center;
-            gap: 28px; transition: var(--transition-long); outline: none;
-            position: relative; transform-style: preserve-3d; text-decoration: none;
-        }
+    /* --- NAVIGATION (3D PERSPECTIVE) --- */
+    .sidebar-nav { display: flex; flex-direction: column; gap: 15px; position: relative; z-index: 500; }
 
-        .nav-link i { font-size: 2.4rem; transition: var(--transition-mid); color: var(--gold-primary); filter: drop-shadow(0 0 5px rgba(212,175,55,0.3)); }
-        .nav-link .nav-text { display: flex; flex-direction: column; }
-        .nav-link .main-label { font-size: 1.7rem; font-weight: 800; color: rgba(255,255,255,0.5); transition: 0.4s; }
-        .nav-link .sub-label { font-size: 0.8rem; color: var(--gold-primary); opacity: 0; transform: translateY(10px); transition: 0.4s; font-weight: 600; letter-spacing: 1px; }
+    .nav-link {
+        background: var(--surface-1); border: 1px solid rgba(255,255,255,0.08);
+        padding: 32px 25px; border-radius: 20px; display: flex; align-items: center;
+        gap: 25px; transition: var(--transition-long); outline: none;
+        position: relative; transform-style: preserve-3d; text-decoration: none;
+    }
 
-        .nav-link:focus, .nav-link.active {
-            background: linear-gradient(90deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05));
-            border-color: var(--gold-primary); box-shadow: var(--neon);
-            transform: rotateY(15deg) translateX(30px) scale(1.06);
-        }
+    /* PREMIUM ICON STYLING */
+    .nav-link i {
+        font-style: normal;
+        font-size: 2.2rem;
+        transition: var(--transition-mid);
+        color: var(--gold-primary);
+        width: 50px;
+        text-align: center;
+        display: inline-block;
+    }
 
-        .nav-link:focus .main-label { color: #fff; text-shadow: 0 0 15px #fff; }
-        .nav-link:focus .sub-label { opacity: 1; transform: translateY(0); }
-        .nav-link:focus i { transform: translateZ(60px) scale(1.3); filter: drop-shadow(0 0 10px var(--gold-primary)); }
+    /* ICON CHARACTER ASSIGNMENT */
+    .icon-home::before { content: "⌂"; }
+    .icon-mosque::before { content: "🕌"; }
+    .icon-coffee::before { content: "☕"; }
+    .icon-briefcase::before { content: "💼"; }
+    .icon-map::before { content: "📍"; }
+    .icon-refresh::before { content: "⟲"; }
 
-        /* --- [6] CONTENT ENGINE (GLASSMORPHISM) --- */
-        .content-frame {
-            background: rgba(10, 10, 10, 0.9); border-radius: 60px;
-            border: 1px solid rgba(255,255,255,0.12); padding: 70px;
-            position: relative; backdrop-filter: blur(40px);
-            box-shadow: 0 60px 120px rgba(0,0,0,1); overflow: hidden;
-        }
+    .nav-link .nav-text { display: flex; flex-direction: column; }
+    .nav-link .main-label { font-size: 1.5rem; font-weight: 800; color: rgba(255,255,255,0.5); }
+    .nav-link .sub-label { font-size: 0.75rem; color: var(--gold-primary); opacity: 0; transform: translateY(10px); transition: 0.4s; }
 
-        .section-view {
-            display: none; height: 100%; width: 100%;
-            animation: sectionIn 1.2s var(--transition-long) forwards;
-        }
+    .nav-link:focus, .nav-link.active {
+        background: linear-gradient(90deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05));
+        border-color: var(--gold-primary); box-shadow: var(--neon);
+        transform: rotateY(15deg) translateX(25px) scale(1.05);
+    }
 
-        @keyframes sectionIn {
-            from { opacity: 0; transform: scale(0.85) translateZ(-600px); filter: blur(30px); }
-            to { opacity: 1; transform: scale(1) translateZ(0); filter: blur(0); }
-        }
+    .nav-link:focus .main-label { color: #fff; text-shadow: 0 0 10px #fff; }
+    .nav-link:focus .sub-label { opacity: 1; transform: translateY(0); }
+    .nav-link:focus i { transform: translateZ(50px) scale(1.2); }
 
-        .section-view.active { display: block; }
+    /* --- CONTENT ENGINE --- */
+    .content-frame {
+        background: rgba(10, 10, 10, 0.9); border-radius: 50px;
+        border: 1px solid rgba(255,255,255,0.12); padding: 50px;
+        position: relative; backdrop-filter: blur(40px);
+        box-shadow: 0 50px 100px rgba(0,0,0,0.8); overflow: hidden;
+    }
 
-        /* --- [7] HOME COMPONENT (PREMIUM SLIDER) --- */
-        .home-grid { display: grid; grid-template-rows: 380px 1fr; gap: 45px; }
-        .image-slider {
-            width: 100%; height: 100%; border-radius: 40px; overflow: hidden;
-            position: relative; border: 2px solid var(--gold-primary);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-        .slide-item {
-            position: absolute; inset: 0; background-size: cover; background-position: center;
-            opacity: 0; transition: opacity 2s ease-in-out; transform: scale(1.1);
-        }
-        .slide-item.active { opacity: 1; transform: scale(1); transition: opacity 2s ease, transform 10s linear; }
-        .slide-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 60%); }
+    .section-view {
+        display: none; height: 100%; width: 100%;
+        animation: sectionIn 1s var(--transition-long) forwards;
+    }
 
-        .welcome-text h2 { font-family: 'Cinzel'; font-size: 4.8rem; color: var(--gold-primary); text-shadow: var(--neon); margin-bottom: 20px; }
-        .welcome-text p { font-size: 1.8rem; color: #bbb; line-height: 1.6; max-width: 900px; }
+    @keyframes sectionIn {
+        from { opacity: 0; transform: scale(0.9) translateZ(-500px); filter: blur(20px); }
+        to { opacity: 1; transform: scale(1) translateZ(0); filter: blur(0); }
+    }
 
-        /* --- [8] PRAYER ENGINE (KARANGANYAR) --- */
-        .prayer-container { display: flex; flex-direction: column; gap: 40px; }
-        .prayer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 25px; }
-        .prayer-card {
-            background: var(--surface-1); padding: 45px 25px; border-radius: 35px;
-            text-align: center; border: 1px solid rgba(212,175,55,0.15); transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative; overflow: hidden;
-        }
-        .prayer-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, var(--gold-primary), transparent); opacity: 0; transition: 0.6s; }
-        .prayer-card.active-now { border-color: var(--gold-primary); box-shadow: var(--neon); transform: translateY(-20px); background: rgba(212,175,55,0.08); }
-        .prayer-card.active-now::after { opacity: 0.1; }
-        .prayer-name { font-size: 1.4rem; font-weight: 800; color: var(--gold-primary); margin-bottom: 25px; letter-spacing: 3px; }
-        .prayer-time { font-family: 'Orbitron'; font-size: 2.6rem; font-weight: 900; }
+    .section-view.active { display: block; }
 
-        /* --- [9] RESTAURANT ENGINE (ULTRA DETAIL) --- */
-        .dining-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; height: 100%; }
-        .menu-category h3 { font-family: 'Cinzel'; color: var(--gold-primary); letter-spacing: 6px; margin-bottom: 30px; border-bottom: 2px solid var(--gold-dark); display: inline-block; padding-bottom: 5px; }
-        .food-item {
-            background: var(--surface-1); padding: 30px; border-radius: 25px;
-            display: flex; justify-content: space-between; align-items: center;
-            border-left: 6px solid transparent; transition: 0.4s; margin-bottom: 15px;
-        }
-        .food-item:focus, .food-item:hover { background: var(--surface-2); border-left-color: var(--gold-primary); transform: translateX(15px); }
-        .food-details h4 { font-size: 1.6rem; color: #fff; margin-bottom: 8px; }
-        .food-details p { font-size: 0.95rem; color: #888; font-style: italic; }
-        .food-price { font-family: 'Orbitron'; color: var(--gold-primary); font-size: 1.6rem; font-weight: 800; }
+    /* --- HOME COMPONENTS --- */
+    .home-grid { display: grid; grid-template-rows: 350px 1fr; gap: 35px; }
+    .image-slider {
+        width: 100%; height: 100%; border-radius: 35px; overflow: hidden;
+        position: relative; border: 2px solid var(--gold-primary);
+    }
+    .slide-item {
+        position: absolute; inset: 0; background-size: cover; background-position: center;
+        opacity: 0; transition: opacity 2s ease-in-out; transform: scale(1.1);
+    }
+    .slide-item.active { opacity: 1; transform: scale(1); }
+    .slide-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 60%); }
 
-        /* --- [10] ADZAN ALARM ENGINE --- */
-        .adzan-alarm {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.99); z-index: 100000;
-            display: none; flex-direction: column; justify-content: center;
-            align-items: center; text-align: center; backdrop-filter: blur(60px);
-        }
-        .adzan-ring {
-            width: 320px; height: 320px; border: 12px solid var(--gold-primary);
-            border-radius: 50%; display: flex; justify-content: center;
-            align-items: center; margin-bottom: 60px; animation: pulseGlow 2s infinite;
-        }
-        @keyframes pulseGlow { 0% { box-shadow: 0 0 0 0 rgba(212,175,55,0.8); transform: scale(1); } 70% { box-shadow: 0 0 0 120px rgba(212,175,55,0); transform: scale(1.05); } 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); transform: scale(1); } }
-        .adzan-text h1 { font-family: 'Cinzel'; font-size: 8rem; color: var(--gold-primary); text-shadow: var(--neon); }
-        .adzan-text h2 { font-family: 'Orbitron'; font-size: 3.5rem; letter-spacing: 12px; margin-top: 25px; color: #fff; }
+    /* --- PRAYER ENGINE --- */
+    .prayer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-top: 30px; }
+    .prayer-card {
+        background: var(--surface-1); padding: 35px 15px; border-radius: 25px;
+        text-align: center; border: 1px solid rgba(212,175,55,0.15); transition: 0.5s;
+    }
+    .prayer-card.active-now { border-color: var(--gold-primary); box-shadow: var(--neon); transform: translateY(-10px); }
+    .prayer-name { font-size: 1.1rem; font-weight: 800; color: var(--gold-primary); margin-bottom: 15px; }
+    .prayer-time { font-family: 'Orbitron'; font-size: 2rem; font-weight: 900; }
 
-        /* --- [11] SCROLLBAR --- */
-        ::-webkit-scrollbar { width: 12px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: var(--gold-primary); border-radius: 20px; box-shadow: var(--neon); }
+    /* --- FOOD & INFO LIST --- */
+    .menu-category h3 { font-family: 'Cinzel'; color: var(--gold-primary); margin-bottom: 25px; border-bottom: 1px solid var(--gold-dark); display: inline-block; }
+    .food-item {
+        background: var(--surface-1); padding: 25px; border-radius: 20px;
+        display: flex; justify-content: space-between; align-items: center;
+        margin-bottom: 15px; border-left: 5px solid transparent; transition: 0.3s;
+    }
+    .food-item:focus { background: var(--surface-2); border-left-color: var(--gold-primary); transform: translateX(10px); }
+    .food-price { font-family: 'Orbitron'; color: var(--gold-primary); font-size: 1.4rem; font-weight: 800; }
 
-    </style>
+    /* --- ADZAN POPUP --- */
+    .adzan-alarm {
+        position: fixed; inset: 0; background: rgba(0,0,0,0.99); z-index: 100000;
+        display: none; flex-direction: column; justify-content: center; align-items: center;
+    }
+    .adzan-ring {
+        width: 250px; height: 250px; border: 10px solid var(--gold-primary);
+        border-radius: 50%; display: flex; justify-content: center; align-items: center;
+        margin-bottom: 50px; animation: pulseGlow 2s infinite;
+    }
+    @keyframes pulseGlow { 
+        0% { box-shadow: 0 0 0 0 rgba(212,175,55,0.7); } 
+        70% { box-shadow: 0 0 0 60px rgba(212,175,55,0); } 
+        100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); } 
+    }
+
+    /* --- SCROLLBAR --- */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-thumb { background: var(--gold-primary); border-radius: 10px; }
+
+        </style>
 </head>
 <body onclick="enableAudioEngine()">
 
@@ -219,32 +233,32 @@
 
     <main>
         <aside class="sidebar-nav">
-            <a class="nav-link active" tabindex="0" onfocus="navigateTo('home')">
-                <i>🏠</i>
-                <div class="nav-text"><span class="main-label">BERANDA</span><span class="sub-label">Luxury Experience</span></div>
-            </a>
-            <a class="nav-link" tabindex="0" onfocus="navigateTo('sholat')">
-                <i>🕌</i>
-                <div class="nav-text"><span class="main-label">SHOLAT</span><span class="sub-label">Jadwal Karanganyar</span></div>
-            </a>
-            <a class="nav-link" tabindex="0" onfocus="navigateTo('dining')">
-                <i>🍽️</i>
-                <div class="nav-text"><span class="main-label">RESTO</span><span class="sub-label">Menu Room Service</span></div>
-            </a>
-            <a class="nav-link" tabindex="0" onfocus="navigateTo('facilities')">
-                <i>💎</i>
-                <div class="nav-text"><span class="main-label">FASILITAS</span><span class="sub-label">Layanan Hotel</span></div>
-            </a>
-            <a class="nav-link" tabindex="0" onfocus="navigateTo('tourism')">
-                <i>🗺️</i>
-                <div class="nav-text"><span class="main-label">WISATA</span><span class="sub-label">Jelajah Kota</span></div>
-            </a>
-            <a class="nav-link" style="margin-top: auto; border-color: var(--red-danger);" onclick="window.location.reload()">
-                <i style="color: var(--red-danger);">📺</i>
-                <div class="nav-text"><span class="main-label" style="color: var(--red-danger);">RELOAD</span><span class="sub-label" style="color: var(--red-danger);">Reset System</span></div>
-            </a>
+    <a class="nav-link active" tabindex="0" onfocus="navigateTo('home')">
+        <i class="icon-home"></i>
+        <div class="nav-text"><span class="main-label">BERANDA</span><span class="sub-label">Luxury Experience</span></div>
+    </a>
+    <a class="nav-link" tabindex="0" onfocus="navigateTo('sholat')">
+        <i class="icon-mosque"></i>
+        <div class="nav-text"><span class="main-label">SHOLAT</span><span class="sub-label">Jadwal Karanganyar</span></div>
+    </a>
+    <a class="nav-link" tabindex="0" onfocus="navigateTo('dining')">
+        <i class="icon-coffee"></i>
+        <div class="nav-text"><span class="main-label">RESTO</span><span class="sub-label">Menu Room Service</span></div>
+    </a>
+    <a class="nav-link" tabindex="0" onfocus="navigateTo('facilities')">
+        <i class="icon-briefcase"></i>
+        <div class="nav-text"><span class="main-label">FASILITAS</span><span class="sub-label">Layanan Hotel</span></div>
+    </a>
+    <a class="nav-link" tabindex="0" onfocus="navigateTo('tourism')">
+        <i class="icon-map"></i>
+        <div class="nav-text"><span class="main-label">WISATA</span><span class="sub-label">Jelajah Kota</span></div>
+    </a>
+    <a class="nav-link" style="margin-top: auto; border-color: var(--red-danger);" onclick="window.location.reload()">
+        <i class="icon-refresh" style="color: var(--red-danger);"></i>
+        <div class="nav-text"><span class="main-label" style="color: var(--red-danger);">RELOAD</span><span class="sub-label" style="color: var(--red-danger);">Reset System</span></div>
+    </a>
         </aside>
-
+        
         <section class="content-frame">
             
             <div id="sec-home" class="section-view active">
