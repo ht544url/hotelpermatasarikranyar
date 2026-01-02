@@ -181,6 +181,57 @@
         border-radius: 50%; display: flex; justify-content: center; align-items: center;
         margin-bottom: 50px; animation: pulseGlow 2s infinite;
     }
+
+    /* --- FLOATING CONTROL PANEL (Pojok Kanan Bawah) --- */
+.control-panel {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--gold);
+    padding: 15px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-areas: 
+        ". up ."
+        "left ok right"
+        ". down ."
+        "fs fs fs";
+    gap: 10px;
+    z-index: 9999;
+    box-shadow: var(--neon);
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    background: var(--surface);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.control-btn:active { background: var(--gold); color: #000; }
+
+.btn-up { grid-area: up; }
+.btn-left { grid-area: left; }
+.btn-ok { grid-area: ok; background: var(--gold); color: #000; }
+.btn-right { grid-area: right; }
+.btn-down { grid-area: down; }
+.btn-fs { 
+    grid-area: fs; 
+    width: 100%; 
+    margin-top: 5px; 
+    font-size: 0.8rem; 
+    height: 40px; 
+}
+    
     @keyframes pulseGlow { 
         0% { box-shadow: 0 0 0 0 rgba(212,175,55,0.7); } 
         70% { box-shadow: 0 0 0 60px rgba(212,175,55,0); } 
@@ -373,6 +424,14 @@
                 </div>
             </div>
 
+            <div class="control-panel">
+    <div class="control-btn btn-up" onclick="simulateKey('ArrowUp')">▲</div>
+    <div class="control-btn btn-left" onclick="simulateKey('ArrowLeft')">◀</div>
+    <div class="control-btn btn-ok" onclick="simulateKey('Enter')">OK</div>
+    <div class="control-btn btn-right" onclick="simulateKey('ArrowRight')">▶</div>
+    <div class="control-btn btn-down" onclick="simulateKey('ArrowDown')">▼</div>
+    <div class="control-btn btn-fs" onclick="toggleFullScreen()">FULLSCREEN (ON/OFF)</div>
+            </div>
         </section>
     </main>
 
@@ -511,6 +570,51 @@
             }
         });
 
+// Fungsi Simulasi Navigasi (Untuk D-Pad Virtual)
+function simulateKey(keyName) {
+    const event = new KeyboardEvent('keydown', {
+        key: keyName,
+        code: keyName,
+        keyCode: (keyName === 'ArrowUp' ? 38 : keyName === 'ArrowDown' ? 40 : keyName === 'ArrowLeft' ? 37 : keyName === 'ArrowRight' ? 39 : 13),
+        which: (keyName === 'ArrowUp' ? 38 : keyName === 'ArrowDown' ? 40 : keyName === 'ArrowLeft' ? 37 : keyName === 'ArrowRight' ? 39 : 13),
+        bubbles: true
+    });
+    document.dispatchEvent(event);
+
+    // Jika menekan OK/Enter pada elemen yang sedang aktif (Focused)
+    if(keyName === 'Enter') {
+        document.activeElement.click();
+    }
+}
+
+// Fungsi Layar Penuh (Toggle Fullscreen)
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            alert(`Error attempting to enable full-screen mode: ${err.message}`);
+        });
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
+}
+
+// Tambahan: Supaya panah kanan-kiri bisa berpindah antar menu/elemen
+document.addEventListener('keydown', (e) => {
+    const focusable = Array.from(document.querySelectorAll('.nav-link, .food-item, button, [tabindex="0"]'));
+    let index = focusable.indexOf(document.activeElement);
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        index = (index + 1) % focusable.length;
+        focusable[index].focus();
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        index = (index - 1 + focusable.length) % focusable.length;
+        focusable[index].focus();
+    }
+});
+        
+        
         // INIT ALL
         window.onload = () => {
             initSystemTime();
